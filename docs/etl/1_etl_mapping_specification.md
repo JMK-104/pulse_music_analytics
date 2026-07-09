@@ -1,7 +1,9 @@
 # ETL Mapping Specification
 
 **Project:** Pulse Music Analytics Platform
+
 **Author:** Justin Kakuyo
+
 **Last Updated:** July 8, 2026
 
 ---
