@@ -6,9 +6,9 @@
 
 ---
 
-# 1. Overview
+# Overview
 
-## 1.1 Purpose
+## Purpose
 
 This document defines the Extract, Transform, and Load (ETL) processes used to populate the Pulse Music Analytics Platform data warehouse.
 
@@ -18,7 +18,7 @@ The document serves as the technical implementation guide for the ETL pipelines 
 
 ---
 
-## 1.2 Scope
+## Scope
 
 This specification covers the complete ETL lifecycle for the Pulse Music Analytics Platform, including:
 
@@ -35,7 +35,7 @@ The scope of this document is limited to the analytics warehouse and does not in
 
 ---
 
-## 1.3 Objectives
+## Objectives
 
 The ETL pipelines are designed to achieve the following objectives:
 
@@ -49,7 +49,7 @@ The ETL pipelines are designed to achieve the following objectives:
 
 ---
 
-## 1.4 Architecture Overview
+## Architecture Overview
 
 The Pulse Music Analytics Platform follows a Medallion Architecture consisting of three logical layers.
 
@@ -114,7 +114,7 @@ The Gold layer is the primary source for reporting, dashboards, and analytical q
 
 ---
 
-## 1.5 High-Level ETL Flow
+## High-Level ETL Flow
 
 ```text
 Operational Source System
@@ -137,7 +137,7 @@ Operational Source System
 
 ---
 
-## 1.6 Source Systems
+## Source Systems
 
 The operational database consists of the following source tables:
 
@@ -166,7 +166,7 @@ The operational database consists of the following source tables:
 
 ---
 
-## 1.7 Target Warehouse
+## Target Warehouse
 
 The ETL pipelines populate the Gold Layer Galaxy Schema consisting of:
 
@@ -198,7 +198,7 @@ The ETL pipelines populate the Gold Layer Galaxy Schema consisting of:
 
 ---
 
-## 1.8 Guiding Principles
+## Guiding Principles
 
 The ETL implementation follows the following design principles:
 
