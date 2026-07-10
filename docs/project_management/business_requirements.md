@@ -4,7 +4,7 @@
 
 ## Purpose
 
-Pulse Music is a fictional subscription-based music streaming platform operating across multiple international markets. The company has experienced rapid user growth since its launch and now requires a centralized analytics platform to support business decision-making.
+Pulse Music is a subscription-based music streaming platform operating across multiple international markets. The company has experienced rapid user growth since its launch and now requires a centralized analytics platform to support business decision-making.
 
 This project aims to design and implement an end-to-end analytics solution that models the core operations of the business. The platform will include a relational data warehouse, realistic synthetic data, automated ETL processes, data quality validation, SQL-based analytics, and interactive Power BI dashboards.
 
