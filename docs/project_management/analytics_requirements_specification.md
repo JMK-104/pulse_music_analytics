@@ -1,6 +1,7 @@
 # Analytics Requirements Specification (ARS)
 
 **Scope:** Core Business KPIs
+
 **System:** Pulse Analytics Warehouse
 
 ---
