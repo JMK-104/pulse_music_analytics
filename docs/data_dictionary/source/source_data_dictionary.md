@@ -254,11 +254,11 @@ The table acts as a parent entity for songs.
 | Column         | Data Type    | Nullable | Description                                                  |
 | -------------- | ------------ | -------- | ------------------------------------------------------------ |
 | `album_id`     | UUID         | No       | Unique identifier for each album.                            |
-| `artist_id`    | UUID         | No       | Identifier of the artist associated with the album.          |
 | `album_title`  | VARCHAR(255) | No       | Title of the album.                                          |
 | `release_date` | DATE         | Yes      | Official release date of the album.                          |
 | `album_type`   | VARCHAR(50)  | Yes      | Classification of the release, such as Album, EP, or Single. |
 | `label_name`   | VARCHAR(255) | Yes      | Record label associated with the release.                    |
+| `artist_id`    | UUID         | No       | Identifier of the artist associated with the album.          |
 | `created_at`   | TIMESTAMP    | No       | Record creation timestamp (UTC).                             |
 | `updated_at`   | TIMESTAMP    | No       | Most recent record modification timestamp (UTC).             |
 
