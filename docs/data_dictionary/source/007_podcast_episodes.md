@@ -37,12 +37,12 @@ The table serves as the primary content reference for podcast playback events re
 | Column             | Data Type    | Nullable | Description                                                         |
 | ------------------ | ------------ | -------- | ------------------------------------------------------------------- |
 | `episode_id`       | UUID         | No       | Unique identifier for each podcast episode.                         |
-| `podcast_id`       | UUID         | No       | Identifier of the podcast to which the episode belongs.             |
 | `episode_title`    | VARCHAR(255) | No       | Display title of the episode.                                       |
 | `release_date`     | DATE         | No       | Date on which the episode was published.                            |
 | `duration_seconds` | INTEGER      | No       | Total episode duration in seconds.                                  |
 | `episode_number`   | INTEGER      | Yes      | Episode sequence number where provided by the publisher.            |
 | `is_explicit`      | BOOLEAN      | No       | Indicates whether the episode contains explicit content.            |
+| `podcast_id`       | UUID         | No       | Identifier of the podcast to which the episode belongs.             |
 | `is_active`        | BOOLEAN      | No       | Indicates whether the episode is currently available for streaming. |
 | `created_at`       | TIMESTAMP    | No       | Record creation timestamp (UTC).                                    |
 | `updated_at`       | TIMESTAMP    | No       | Most recent record modification timestamp (UTC).                    |
