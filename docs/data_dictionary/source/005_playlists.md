@@ -38,10 +38,10 @@ User ownership may be optional for platform-managed editorial playlists.
 | Column                 | Data Type    | Nullable | Description                                                                                 |
 | ---------------------- | ------------ | -------- | ------------------------------------------------------------------------------------------- |
 | `playlist_id`          | UUID         | No       | Unique identifier for each playlist.                                                        |
-| `user_id`              | UUID         | Yes      | Identifier of the user who owns the playlist. Null for selected platform-managed playlists. |
 | `playlist_name`        | VARCHAR(255) | No       | Display name of the playlist.                                                               |
 | `playlist_description` | TEXT         | Yes      | Optional description of the playlist.                                                       |
 | `playlist_type`        | VARCHAR(50)  | No       | Classification such as User, Editorial, or Algorithmic.                                     |
+| `user_id`              | UUID         | Yes      | Identifier of the user who owns the playlist. Null for selected platform-managed playlists. |
 | `is_public`            | BOOLEAN      | No       | Indicates whether the playlist is publicly accessible.                                      |
 | `created_at`           | TIMESTAMP    | No       | Record creation timestamp (UTC).                                                            |
 | `updated_at`           | TIMESTAMP    | No       | Most recent record modification timestamp (UTC).                                            |
