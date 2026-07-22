@@ -40,12 +40,12 @@ The relationship between albums and songs is optional because standalone singles
 | Column             | Data Type    | Nullable | Description                                                      |
 | ------------------ | ------------ | -------- | ---------------------------------------------------------------- |
 | `song_id`          | UUID         | No       | Unique identifier for each song.                                 |
-| `artist_id`        | UUID         | No       | Identifier of the song's primary artist.                         |
-| `album_id`         | UUID         | Yes      | Identifier of the associated album, where applicable.            |
 | `song_title`       | VARCHAR(255) | No       | Title of the song.                                               |
 | `genre`            | VARCHAR(100) | Yes      | Musical genre assigned to the song.                              |
 | `duration_seconds` | INTEGER      | No       | Total song duration in seconds.                                  |
 | `release_date`     | DATE         | Yes      | Official release date of the song.                               |
+| `artist_id`        | UUID         | No       | Identifier of the song's primary artist.                         |
+| `album_id`         | UUID         | Yes      | Identifier of the associated album, where applicable.            |
 | `explicit`         | BOOLEAN      | No       | Indicates whether the song contains explicit content.            |
 | `is_active`        | BOOLEAN      | No       | Indicates whether the song is currently available for streaming. |
 | `created_at`       | TIMESTAMP    | No       | Record creation timestamp (UTC).                                 |
