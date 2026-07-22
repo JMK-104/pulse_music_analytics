@@ -36,12 +36,12 @@ Session data supports analysis of user activity, engagement frequency, platform 
 | Column                    | Data Type    | Nullable | Description                                         |
 | ------------------------- | ------------ | -------- | --------------------------------------------------- |
 | `session_id`              | UUID         | No       | Unique identifier for each application session.     |
-| `user_id`                 | UUID         | No       | Identifier of the user associated with the session. |
 | `session_start_timestamp` | TIMESTAMP    | No       | Date and time the session began (UTC).              |
 | `session_end_timestamp`   | TIMESTAMP    | Yes      | Date and time the session ended (UTC).              |
 | `device_type`             | VARCHAR(50)  | Yes      | General category of device used during the session. |
 | `operating_system`        | VARCHAR(100) | Yes      | Operating system used during the session.           |
 | `country`                 | VARCHAR(100) | Yes      | Country from which the session originated.          |
+| `user_id`                 | UUID         | No       | Identifier of the user associated with the session. |
 | `created_at`              | TIMESTAMP    | No       | Record creation timestamp (UTC).                    |
 
 ---
