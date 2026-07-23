@@ -37,12 +37,12 @@ The table serves as the primary source for podcast engagement and consumption an
 | Column                | Data Type   | Nullable | Description                                                          |
 | --------------------- | ----------- | -------- | -------------------------------------------------------------------- |
 | `podcast_playback_id` | UUID        | No       | Unique identifier for each podcast playback event.                   |
-| `user_id`             | UUID        | No       | Identifier of the user who generated the playback event.             |
-| `episode_id`          | UUID        | No       | Identifier of the podcast episode played.                            |
 | `playback_timestamp`  | TIMESTAMP   | No       | Date and time the playback began (UTC).                              |
 | `seconds_played`      | INTEGER     | No       | Number of seconds the user listened to the episode.                  |
 | `device_type`         | VARCHAR(50) | Yes      | Device category used for playback.                                   |
 | `source_type`         | VARCHAR(50) | No       | Source from which playback was initiated.                            |
+| `user_id`             | UUID        | No       | Identifier of the user who generated the playback event.             |
+| `episode_id`          | UUID        | No       | Identifier of the podcast episode played.                            |
 | `completed`           | BOOLEAN     | No       | Indicates whether the playback met the defined completion threshold. |
 | `created_at`          | TIMESTAMP   | No       | Record creation timestamp (UTC).                                     |
 
