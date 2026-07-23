@@ -40,13 +40,13 @@ The playlist relationship is optional because many listening events originate fr
 | Column               | Data Type   | Nullable | Description                                                          |
 | -------------------- | ----------- | -------- | -------------------------------------------------------------------- |
 | `playback_id`        | UUID        | No       | Unique identifier for each song playback event.                      |
-| `user_id`            | UUID        | No       | Identifier of the user who generated the playback event.             |
-| `song_id`            | UUID        | No       | Identifier of the song played.                                       |
-| `playlist_id`        | UUID        | Yes      | Identifier of the originating playlist, where applicable.            |
 | `playback_timestamp` | TIMESTAMP   | No       | Date and time the playback began (UTC).                              |
 | `seconds_played`     | INTEGER     | No       | Number of seconds the user listened to the song.                     |
 | `device_type`        | VARCHAR(50) | Yes      | Device category used for playback.                                   |
 | `source_type`        | VARCHAR(50) | No       | Source from which playback was initiated.                            |
+| `user_id`            | UUID        | No       | Identifier of the user who generated the playback event.             |
+| `song_id`            | UUID        | No       | Identifier of the song played.                                       |
+| `playlist_id`        | UUID        | Yes      | Identifier of the originating playlist, where applicable.            |
 | `completed`          | BOOLEAN     | No       | Indicates whether the playback met the defined completion threshold. |
 | `skipped`            | BOOLEAN     | No       | Indicates whether the user skipped the song.                         |
 | `created_at`         | TIMESTAMP   | No       | Record creation timestamp (UTC).                                     |
