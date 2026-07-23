@@ -37,12 +37,12 @@ A user may have multiple subscription records over time as they subscribe, cance
 | Column                | Data Type    | Nullable | Description                                                |
 | --------------------- | ------------ | -------- | ---------------------------------------------------------- |
 | `subscription_id`     | UUID         | No       | Unique identifier for each subscription record.            |
-| `user_id`             | UUID         | No       | Identifier of the subscribed user.                         |
 | `plan_name`           | VARCHAR(100) | No       | Name of the subscription plan.                             |
 | `billing_cycle`       | VARCHAR(50)  | No       | Billing frequency, such as Monthly or Annual.              |
-| `subscription_status` | VARCHAR(50)  | No       | Current status of the subscription record.                 |
 | `start_date`          | DATE         | No       | Date the subscription period began.                        |
 | `end_date`            | DATE         | Yes      | Date the subscription period ended or is scheduled to end. |
+| `user_id`             | UUID         | No       | Identifier of the subscribed user.                         |
+| `subscription_status` | VARCHAR(50)  | No       | Current status of the subscription record.                 |
 | `auto_renew`          | BOOLEAN      | No       | Indicates whether automatic renewal is enabled.            |
 | `created_at`          | TIMESTAMP    | No       | Record creation timestamp (UTC).                           |
 | `updated_at`          | TIMESTAMP    | No       | Most recent record modification timestamp (UTC).           |
