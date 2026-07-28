@@ -1,4 +1,4 @@
--- The purpose of this sql script is to create a table for marketing campaigns in a PostgreSQL database.
+-- The purpose of this sql script is to create a table for marketing campaigns in the database.
 
 CREATE TABLE marketing_campaigns (
     campaign_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
