@@ -1,3 +1,5 @@
+-- The purpose of this sql script is to add foreign key constraints to the tables in the database.
+
 -- Albums
 ALTER TABLE albums
 ADD CONSTRAINT fk_albums_artists
