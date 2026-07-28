@@ -39,12 +39,12 @@ The direct user reference supports operational lookup and auditing while the sub
 | Column              | Data Type     | Nullable | Description                                                 |
 | ------------------- | ------------- | -------- | ----------------------------------------------------------- |
 | `payment_id`        | UUID          | No       | Unique identifier for each payment transaction.             |
-| `subscription_id`   | UUID          | No       | Identifier of the subscription associated with the payment. |
-| `user_id`           | UUID          | No       | Identifier of the user associated with the payment.         |
 | `payment_timestamp` | TIMESTAMP     | No       | Date and time the payment was processed (UTC).              |
 | `amount`            | NUMERIC(10,2) | No       | Monetary value of the transaction.                          |
 | `currency`          | VARCHAR(3)    | No       | Three-character transaction currency code.                  |
 | `payment_method`    | VARCHAR(50)   | Yes      | Payment method used for the transaction.                    |
+| `subscription_id`   | UUID          | No       | Identifier of the subscription associated with the payment. |
+| `user_id`           | UUID          | No       | Identifier of the user associated with the payment.         |
 | `payment_status`    | VARCHAR(50)   | No       | Outcome or current status of the payment transaction.       |
 | `created_at`        | TIMESTAMP     | No       | Record creation timestamp (UTC).                            |
 
