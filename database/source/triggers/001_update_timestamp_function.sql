@@ -5,7 +5,7 @@
 -- contain an updated_at column.
 -- =================================================================
 
-CREATE OR REPLACE FUNCTION update_updated_at_column()
+CREATE OR REPLACE FUNCTION source.update_updated_at_column()
 RETURNS TRIGGER
 LANGUAGE plpgsql
 AS
