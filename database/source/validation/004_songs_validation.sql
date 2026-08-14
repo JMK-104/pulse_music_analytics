@@ -4,15 +4,15 @@
 
 -- Songs with missing artists
 SELECT s.*
-FROM songs s
-LEFT JOIN artists a
+FROM source.songs s
+LEFT JOIN source.artists a
     ON s.artist_id = a.artist_id
 WHERE a.artist_id IS NULL
 ;
 
 -- Songs with missing albums
 SELECT *
-FROM songs
+FROM source.songs
 WHERE album_id IS NULL
 ;
 
@@ -23,31 +23,31 @@ SELECT
     s.artist_id,
     al.album_id,
     al.artist_id AS album_artist_id
-FROM songs s
-JOIN albums al
+FROM source.songs s
+JOIN source.albums al
     ON s.album_id = al.album_id
 WHERE s.artist_id <> al.artist_id
 ;
 
 -- Empty Song titles
 SELECT *
-FROM songs
+FROM source.songs
 WHERE TRIM(song_title) = ''
 ;
 
 -- Unrealistic Song durations
 SELECT *
-FROM songs
+FROM source.songs
 WHERE duration_seconds < 10
 ;
 SELECT *
-FROM songs
+FROM source.songs
 WHERE duration_seconds > 3600
 ;
 
 -- Future Release Dates
 SELECT *
-FROM songs
+FROM source.songs
 WHERE release_date > CURRENT_DATE
 ;
 
@@ -57,8 +57,8 @@ SELECT
     s.release_date AS song_release_date,
     al.album_title,
     al.release_date AS album_release_date
-FROM songs s
-JOIN albums al
+FROM source.songs s
+JOIN source.albums al
     ON s.album_id = al.album_id
 WHERE s.release_date < al.release_date
 ;
@@ -68,8 +68,8 @@ SELECT
     s.song_id,
     s.song_title,
     a.artist_name
-FROM songs s
-JOIN artists a
+FROM source.songs s
+JOIN source.artists a
     ON s.artist_id = a.artist_id
 WHERE s.is_active = TRUE
 AND a.is_active = FALSE
@@ -80,7 +80,7 @@ SELECT
     artist_id,
     song_title,
     COUNT(*) AS duplicate_count
-FROM songs
+FROM source.songs
 GROUP BY
     artist_id,
     song_title
@@ -91,8 +91,8 @@ HAVING COUNT(*) > 1
 SELECT DISTINCT
     s.song_id,
     s.song_title
-FROM songs s
-JOIN listening_history lh
+FROM source.songs s
+JOIN source.listening_history lh
     ON s.song_id = lh.song_id
 WHERE s.is_active = FALSE
 ;
