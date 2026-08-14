@@ -4,29 +4,29 @@
 
 -- Playback events without users
 SELECT lh.*
-FROM listening_history lh
-LEFT JOIN users u
+FROM source.listening_history lh
+LEFT JOIN source.users u
     ON lh.user_id = u.user_id
 WHERE u.user_id IS NULL
 ;
 
 -- Playback events without songs
 SELECT lh.*
-FROM listening_history lh
-LEFT JOIN songs s
+FROM source.listening_history lh
+LEFT JOIN source.songs s
     ON lh.song_id = s.song_id
 WHERE s.song_id IS NULL
 ;
 
 -- Future Playback Timestamps
 SELECT *
-FROM listening_history
+FROM source.listening_history
 WHERE playback_timestamp > CURRENT_TIMESTAMP
 ;
 
 -- Negative Listening durations
 SELECT *
-FROM listening_history
+FROM source.listening_history
 WHERE seconds_played < 0
 ;
 
@@ -36,8 +36,8 @@ SELECT
     lh.song_id,
     lh.seconds_played,
     s.duration_seconds
-FROM listening_history lh
-JOIN songs s
+FROM source.listening_history lh
+JOIN source.songs s
     ON lh.song_id = s.song_id
 WHERE lh.seconds_played > s.duration_seconds
 ;
@@ -46,8 +46,8 @@ WHERE lh.seconds_played > s.duration_seconds
 SELECT
     lh.*,
     s.duration_seconds
-FROM listening_history lh
-JOIN songs s
+FROM source.listening_history lh
+JOIN source.songs s
     ON lh.song_id = s.song_id
 WHERE lh.completed = TRUE
 AND lh.seconds_played < (s.duration_seconds * 0.9)
@@ -55,21 +55,21 @@ AND lh.seconds_played < (s.duration_seconds * 0.9)
 
 -- Skipped songs marked as completed
 SELECT *
-FROM listening_history
+FROM source.listening_history
 WHERE completed = TRUE
 AND skipped = TRUE
 ;
 
 -- Zero second playbacks
 SELECT *
-FROM listening_history
+FROM source.listening_history
 WHERE seconds_played = 0
 ;
 
 -- Playlist references without playlist
 SELECT lh.*
-FROM listening_history lh
-LEFT JOIN playlists p
+FROM source.listening_history lh
+LEFT JOIN source.playlists p
     ON lh.playlist_id = p.playlist_id
 WHERE lh.playlist_id IS NOT NULL
 AND p.playlist_id IS NULL
@@ -79,8 +79,8 @@ AND p.playlist_id IS NULL
 SELECT
     lh.playback_id,
     s.song_title
-FROM listening_history lh
-JOIN songs s
+FROM source.listening_history lh
+JOIN source.songs s
     ON lh.song_id = s.song_id
 WHERE s.is_active = FALSE
 ;
@@ -90,7 +90,7 @@ SELECT
     user_id,
     DATE(playback_timestamp) AS playback_date,
     COUNT(*) AS playback_count
-FROM listening_history
+FROM source.listening_history
 GROUP BY
     user_id,
     DATE(playback_timestamp)
@@ -101,7 +101,7 @@ HAVING COUNT(*) > 1000
 SELECT
     source_type,
     COUNT(*) AS playback_count
-FROM listening_history
+FROM source.listening_history
 GROUP BY source_type
 ORDER BY playback_count DESC
 ;
